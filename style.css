@@ -1,5 +1,8 @@
 #container {
     display: flex;
-
 }
 
+.grid {
+    border-color: black;
+    border-style: solid;
+}
