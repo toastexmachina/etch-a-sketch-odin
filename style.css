@@ -1,8 +1,15 @@
+* {
+    /* This ensures the borders are incorporated into any sizing properties */
+    box-sizing: border-box;
+}
+
 #container {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .grid {
     border-color: black;
     border-style: solid;
+    flex-basis: 6.25%;
 }
