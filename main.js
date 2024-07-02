@@ -6,7 +6,7 @@ for (let i=0; i<256; i++) {
     const newDiv = document.createElement("div");
     container.appendChild(newDiv);
     newDiv.classList.add('grid');
-    newDiv.textContent = `${i}`;
+    // newDiv.textContent = `${i}`;
     newDiv.style.flexBasis = '6.25%';
 
     newDiv.addEventListener("mouseover", function(e){
@@ -21,8 +21,6 @@ button.textContent = "Click Here To Begin";
 
 button.addEventListener("click", function(e){
     // Sets the grid size
-   // let gridSize = prompt("How many boxes would you like?", "16x16"); 
-    // ADD A CONDITION THAT LIMITS THE USER INPUT TO NUMBERS BELOW 100
     let gridSize;
 
     while (true) {
@@ -33,6 +31,7 @@ button.addEventListener("click", function(e){
             continue
         }
     }
+    
     // Removes the previous grid
     container.querySelectorAll('.grid').forEach((element) => element.remove());
 
@@ -41,7 +40,7 @@ button.addEventListener("click", function(e){
         const newDiv = document.createElement("div");
         container.appendChild(newDiv);
         newDiv.classList.add('grid');
-        newDiv.textContent = `${i}`;
+        // newDiv.textContent = `${i}`;
 
         // Reformats grid to flex equally
         let flexAmount = (1/gridSize)*100;
