@@ -13,3 +13,9 @@
     border-style: solid;
     flex-basis: 6.25%;
 }
+
+button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
