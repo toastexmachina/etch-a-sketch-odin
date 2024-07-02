@@ -1,9 +1,3 @@
-// 16 x 16 Grid
-
-// Target the container div in the html file
-// Create 16x16=256 div elements in JS and insert them dynamically
-// Style elements so the div elements have a border
-
 // Store the div element in the html file to a variable
 const container = document.querySelector("#container");
 
@@ -13,8 +7,11 @@ for (let i=0; i<256; i++) {
     container.appendChild(newDiv);
     newDiv.classList.add('grid');
     newDiv.textContent = `${i}`;
+    newDiv.addEventListener("mouseover", function(e){
+        e.target.style.backgroundColor = "black";
+    });
 }
 
-// CSS
-// 16 elements per row
-// Flexbox dynamically change as the window changes
+// hover element to change div color when mouse passes over
+// eventListener - mouse hover
+    // function to change background color
