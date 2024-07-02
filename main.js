@@ -8,15 +8,29 @@ for (let i=0; i<256; i++) {
     newDiv.classList.add('grid');
     newDiv.style.flexBasis = '6.25%';
 
+    // event listener for mouse click
+
+    newDiv.addEventListener("mousedown", function(e){
+        mouseDown = true;
+    })
+    newDiv.addEventListener("mouseup", function(e){
+        mouseDown = false;
+    })
     newDiv.addEventListener("mouseover", function(e){
-        e.target.style.backgroundColor = "black";
+        if (mouseDown){
+            e.target.style.backgroundColor = "black";
+        }
     });
 };
 
 // Button to allow users to adjust grid size
+/*
 const button = document.createElement("button");
 document.body.appendChild(button);
 button.textContent = "Click Here To Begin";
+*/
+
+const button = document.querySelector("button");
 
 button.addEventListener("click", function(e){
     // Sets the grid size
@@ -44,8 +58,16 @@ button.addEventListener("click", function(e){
         let flexAmount = (1/gridSize)*100;
         newDiv.style.flexBasis = flexAmount.toString() + '%';
 
+        newDiv.addEventListener("mousedown", function(e){
+            mouseDown = true;
+        })
+        newDiv.addEventListener("mouseup", function(e){
+            mouseDown = false;
+        })
         newDiv.addEventListener("mouseover", function(e){
-            e.target.style.backgroundColor = "black";
+            if (mouseDown){
+                e.target.style.backgroundColor = "black";
+            }
         });
     };
 });
