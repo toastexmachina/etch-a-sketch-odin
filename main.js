@@ -21,8 +21,18 @@ button.textContent = "Click Here To Begin";
 
 button.addEventListener("click", function(e){
     // Sets the grid size
-    let gridSize = prompt("How many boxes would you like?", "16x16"); 
-    
+   // let gridSize = prompt("How many boxes would you like?", "16x16"); 
+    // ADD A CONDITION THAT LIMITS THE USER INPUT TO NUMBERS BELOW 100
+    let gridSize;
+
+    while (true) {
+        gridSize = prompt("How many boxes would you like? Choose a number less than 100", "Ex. 16"); 
+        if (gridSize <= 100){
+            break;
+        } else {
+            continue
+        }
+    }
     // Removes the previous grid
     container.querySelectorAll('.grid').forEach((element) => element.remove());
 
