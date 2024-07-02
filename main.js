@@ -6,7 +6,6 @@ for (let i=0; i<256; i++) {
     const newDiv = document.createElement("div");
     container.appendChild(newDiv);
     newDiv.classList.add('grid');
-    // newDiv.textContent = `${i}`;
     newDiv.style.flexBasis = '6.25%';
 
     newDiv.addEventListener("mouseover", function(e){
@@ -40,7 +39,6 @@ button.addEventListener("click", function(e){
         const newDiv = document.createElement("div");
         container.appendChild(newDiv);
         newDiv.classList.add('grid');
-        // newDiv.textContent = `${i}`;
 
         // Reformats grid to flex equally
         let flexAmount = (1/gridSize)*100;
