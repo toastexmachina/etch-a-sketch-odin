@@ -1,17 +1,14 @@
 // Store the div element in the html file to a variable
 const container = document.querySelector("#container");
 
-// Button at the top of the screen
-// Button click triggers a popup - "How many squares per side?"
-// The number entered removes the existing grid and creates a new grid with the correct number of squares
-    // Change the flex-basis property to js
-
 // Loop to create 256 div elements within the container div
 for (let i=0; i<256; i++) {
     const newDiv = document.createElement("div");
     container.appendChild(newDiv);
     newDiv.classList.add('grid');
     newDiv.textContent = `${i}`;
+    newDiv.style.flexBasis = '6.25%';
+
     newDiv.addEventListener("mouseover", function(e){
         e.target.style.backgroundColor = "black";
     });
@@ -35,6 +32,10 @@ button.addEventListener("click", function(e){
         container.appendChild(newDiv);
         newDiv.classList.add('grid');
         newDiv.textContent = `${i}`;
+
+        // Reformats grid to flex equally
+        let flexAmount = (1/gridSize)*100;
+        newDiv.style.flexBasis = flexAmount.toString() + '%';
 
         newDiv.addEventListener("mouseover", function(e){
             e.target.style.backgroundColor = "black";
